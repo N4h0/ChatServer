@@ -1,0 +1,98 @@
+Forklaring: Q = Spørsmål, AF = alternativ formulering og A = svar.
+
+Q: Hallo!
+A: Hei! Still meg spørsmål så kan jeg hjelpe deg. Jeg er best på korte setninger :D
+
+Q: Hvordan går det!
+A: Jeg er en robot, så jeg er programmert til å alltid ha det fint. Hvordan går det med deg? Hva kan jeg hjelpe deg med?
+
+Q: Hva er fristen på innsending av merverdiavgift?
+A: Fristen for innsending av merverdiavgift (MVA) er vanligvis den 10. i måneden etter utløpet av rapporteringsperioden (kvartalsvis for de fleste virksomheter).
+
+Q: Hva er merverdiavgift (MVA)?
+A: Merverdiavgift (MVA) er en forbruksavgift som legges til prisen på de fleste varer og tjenester. Avgiften betales av sluttbrukeren og administreres av det offentlige for å generere inntekter.
+
+Q: Hva er fristen på innsending av skattemelding?
+A: Fristen for innsending av skattemeldingen er vanligvis 30. april hvert år for privatpersoner og 31. mai for bedrifter, men dette kan variere etter land.
+
+Q: Hva er fristen for årsoppgjør?
+A: Fristen for årsoppgjør er ofte innen seks måneder etter regnskapsårets slutt, altså innen 30. juni for mange bedrifter hvis regnskapsår slutter 31. desember.
+
+Q: Hvordan registrerer jeg et enkeltpersonforetak?
+A: For å registrere et enkeltpersonforetak må du sende inn nødvendige skjemaer til Brønnøysundregistrene, vanligvis via deres nettside eller papirbasert.
+
+Q: Hvordan søker jeg om serveringsbevilling?
+A: For å søke om serveringsbevilling, må du sende en søknad til kommunen hvor virksomheten ligger. Søknaden skal inkludere dokumentasjon på eierskap, lokaler, og planer for virksomheten.
+
+Q: Hvordan er søknad for etableringsprøve?
+A: Søknaden for etableringsprøve involverer vanligvis å bestå en prøve som tester din kunnskap om relevant lovgivning og bransjespesifikke regler.
+
+Q: Hvordan søker jeg om registrering av mva?
+A: Du kan søke om MVA-registrering via Altinn ved å fylle ut og sende inn skjemaet for registrering i Merverdiavgiftsregisteret.
+
+Q: Hvordan utføres omsetningsoppgaven for alkohol?
+A: Omsetningsoppgaven for alkohol utføres ved å rapportere totalt solgt mengde alkohol og betalt alkoholavgift til Skatteetaten periodisk.
+
+Q: Hva er fristen for å levere A-meldingen?
+A: Fristen for å levere A-meldingen er den 5. hver måned.
+
+Q: Hva er timepris for bokføring?
+A: Timepris for bokføring er 1100kr eks mva
+
+Q: Hva er pris for registrering av enkeltpresonsforetak?
+A: Pris for registrering av enkeltpersonforetak er 2000 eks MVA
+
+Q: Hva er pris for registrering av aksjeselskap?
+A: Pris for registrering av aksjeselskap er 3500 eks MVA
+
+Q: Hva er prisen på årsoppgjør for EPF og Aksje selskap?
+A: Prisen for årsoppgjør kan variere, men vanligvis ligger det rundt 8 000-15 000 kr ekskl. MVA for enkeltpersonforetak og 15 000-25 000 kr for aksjeselskap.
+
+Q: Hva er forskjellen mellom regnskapsføring og revisjon?
+A: Regnskapsføring handler om å føre regnskaper og holde oversikt over finansielle transaksjoner, mens revisjon er en uavhengig vurdering av regnskapet for å sikre at det gir et rettvisende bilde.
+
+Q: Har alle regnskapsplikt?
+A: Ikke alle har regnskapsplikt. Små foretak under en viss omsetningsgrense kan være unntatt, men de fleste bedrifter har plikt til å føre regnskap.
+
+Q: Hva er bokføringsplikt?
+A: Bokføringsplikt er lovpålagt krav om å dokumentere alle økonomiske transaksjoner i en virksomhet, for å sikre nøyaktig og pålitelig finansiell rapportering.
+
+Q: Kan jeg trekke fra hjemmekontor på skatten?
+A: Ja, du kan trekke fra utgifter til hjemmekontor på skatten hvis kontoret er nødvendig for din virksomhet og oppfyller visse krav satt av skattemyndighetene.
+
+Q: Hva er forskjellen på en balanse og et resultatregnskap?
+A: En balanse viser verdier av eiendeler, gjeld og egenkapital på et bestemt tidspunkt, mens et resultatregnskap viser inntekter og utgifter over en periode, og resultatet av virksomhetens drift.
+
+
+Q: Hvordan beregner jeg skatt for mitt enkeltpersonforetak?
+A: Beregning av skatt for et enkeltpersonforetak avhenger av flere faktorer, inkludert virksomhetens inntekt, fradragsberettigede kostnader, og gjeldende skatteregler.
+
+Q: Er det obligatorisk med revisor?
+A:I Norge er det vanligvis ikke obligatorisk med revisor for enkeltpersonforetak. Imidlertid kan det være situasjoner der revisor er påkrevd, for eksempel hvis foretaket overstiger  visse økonomiske terskelverdier eller er underlagt spesielle regelverk.
+
+Q: Hva er åpningstidene deres?
+A: Vi har åpent Man-Tor 11-15.
+
+Q: Tilbyr dere bistand med selvangivelsen?
+A: Ja, det gjør vi.
+
+Q: Kan dere hjelpe til med lønnstjenester?
+A: Ja, vi kan hjelpe med lønningstjenester.
+
+Q: Hvor er kontoret deres lokalisert?
+A: Vollaveien 20 A, 0668 Oslo
+
+Q: Tilbyr dere rådgivning for småbedrifter?
+A: Ja, vi tilbyr rådgivning for småbedrifter. 
+
+Q: Hvordan kan jeg bestille en konsultasjon?
+A: Send oss en e-post til mnregnsmap@gmail.com for å bestille en konsultasjon. 
+
+Q: Er dere erfarne med internasjonal skatterådgivning?
+A: Ja, vi har erfaring med internasjonal skatterådgivning
+
+Q: Tilbyr dere digitale regnskapstjenester?
+A: Ja, vi tilbyr digitale regnskapstjenester som er skreddersydd for å møte behovene til moderne virksomheter
+
+Q: Hvilke tjenester tilbyr deres firma?
+A: Vi tilbyr ulike tjenester, hvis du vil vite mer kan du sende oss e-post.

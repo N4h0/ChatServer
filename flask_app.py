@@ -77,26 +77,45 @@ def chatbot():
     for sublist in encoded_questions_list2:
         similarity_scores2.append(max(cosine_similarity([encoded_user_question2], sublist)[0]))
     top_indices = np.argsort(similarity_scores)[-3:][::-1] #Returnerer omdexem tol dei tre høgste verdiane
-    top_indices2 = np.argsort(similarity_scores)[-3:][::-1] #Returnerer omdexem tol dei tre høgste verdiane
+    top_indices2 = np.argsort(similarity_scores2)[-3:][::-1] #Returnerer omdexem tol dei tre høgste verdiane
+
+    top_scores2 = sorted(similarity_scores2, reverse=True)[:3]
+    top_scores = sorted(similarity_scores, reverse=True)[:3]
 
     CoSimScore = max(similarity_scores)
     CoSimScore2 = max(similarity_scores2)
 
-    if CoSimScore > 0.50:
-        print("Returning output to user: ", answers[top_indices[0]])
-        return jsonify(f"{answers[top_indices[0]]} CoSim = {CoSimScore} \n {answers[top_indices2[0]]} CoSim2 = {CoSimScore2}")
-    elif CoSimScore > 0.30:
+    commonQuestions = [{'question': questions[i]} for i in [28,31,35]]
+
+    if CoSimScore2 > 0.80:
+        print("Returning output to user: ", answers[top_indices2[0]])
+        return jsonify(f"{answers[top_indices2[0]]} {CoSimScore2:.2f} \nUtrent:\n {answers[top_indices[0]]} {CoSimScore:.2f}")
+    elif CoSimScore2 > 0.70:
         question_suggestions_with_scores = [
-            {'question': questions[i], 'CoSim': similarity_scores2[i]}
-            for i in top_indices2
+            {
+                'question': f"{questions[i]} {top_scores2[k]:.2f} utrent {questions[j]} {top_scores[k]:.2f}"
+            }
+            for k, (i, j) in enumerate(zip(top_indices2, top_indices))
         ]
         return jsonify({
-            'message': f'Mente du et av disse spørsmålene? \n {answers[top_indices2[0]]} CoSim2 = {CoSimScore2}',
+            'message': f'{answers[top_indices[0]]} {CoSimScore2:.2f}\nUtrent:\n {answers[top_indices[0]]} {CoSimScore:.2f}\n Mente du heller å spørre om noen av disse alternativene?\n',
+            'suggestions': question_suggestions_with_scores
+        })
+    elif CoSimScore2 > 0.50:
+        question_suggestions_with_scores = [
+            {
+                'question': f"{questions[i]} {top_scores2[k]:.2f} utrent {questions[j]} {top_scores[k]:.2f}"
+            }
+            for k, (i, j) in enumerate(zip(top_indices2, top_indices))
+        ]
+        return jsonify({
+            'message': 'Jeg forsto ikke spørsmålet, prøv å omformulere det eller velg ett av disse alternativene.\n',
             'suggestions': question_suggestions_with_scores
         })
     else:
-        return jsonify({'error': "Beklager, ingen tilstrekkelige svar funnet. Still gjerne spørsmålet på en annen måte."})
-
-
+        return jsonify({
+            'message': 'Beklager, jeg forsto ikke spørsmålet. Prøv å stille spørsmålet på en annen måte, eller still meg ett av disse spørsmålene',
+            'suggestions': commonQuestions
+        })
 if __name__ == '__main__':
     app.run(debug=True)

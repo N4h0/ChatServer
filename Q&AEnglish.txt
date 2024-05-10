@@ -1,0 +1,118 @@
+Explanation: Q = Question, AF = Alternative Formulation, and A = Answer.
+
+Q: Hello!
+A: Hi! Ask me questions and I can help you out. I'm best with short sentences :D
+
+Q: How are you!
+A: I'm a robot, so I'm programmed to always be fine. How are you? What can I help you with?
+
+Q: What is the deadline for submitting value-added tax?
+A: The deadline for submitting value-added tax (VAT) is usually the 10th of the month following the end of the reporting period (quarterly for most businesses).
+
+Q: What is value-added tax (VAT)?
+A: Value-added tax (VAT) is a consumption tax added to the price of most goods and services. The tax is paid by the end consumer and administered by the government to generate revenue.
+
+Q: What is the deadline for submitting the tax return?
+A: The deadline for submitting the tax return is usually April 30th each year for individuals and May 31st for businesses, but this may vary by country.
+
+Q: What is the deadline for annual accounts?
+A: The deadline for annual accounts is often within six months after the end of the financial year, i.e., by June 30th for many companies if the financial year ends on December 31st.
+
+Q: How do I register a sole proprietorship?
+A: To register a sole proprietorship, you need to submit necessary forms to the Brønnøysund Register Centre, usually through their website or in paper form.
+
+Q: How do I apply for a liquor license?
+A: To apply for a liquor license, you need to submit an application to the municipality where the business is located. The application should include documentation of ownership, premises, and plans for the business.
+
+Q: What is the application process for establishment test?
+A: The application for an establishment test usually involves passing a test that assesses your knowledge of relevant legislation and industry-specific regulations.
+
+Q: How do I apply for VAT registration?
+A: You can apply for VAT registration via Altinn by filling out and submitting the registration form in the Value Added Tax Register.
+
+Q: How is alcohol turnover reported?
+A: Alcohol turnover is reported by documenting the total quantity of alcohol sold and the alcohol tax paid to the Tax Administration periodically.
+
+Q: What is the deadline for submitting the A-message?
+A: The deadline for submitting the A-message is the 5th of each month.
+
+Q: What is the hourly rate for bookkeeping?
+A: The hourly rate for bookkeeping is 1100 NOK excluding VAT.
+
+Q: What is the registration fee for sole proprietorship?
+A: The registration fee for sole proprietorship is 2000 NOK excluding VAT.
+
+Q: What is the registration fee for a limited company?
+A: The registration fee for a limited company is 3500 NOK excluding VAT.
+
+Q: What is the price for annual accounts for sole proprietorship and limited companies?
+A: The price for annual accounts can vary, but typically ranges from 8,000 to 15,000 NOK excluding VAT for sole proprietorship and 15,000 to 25,000 NOK for limited companies.
+
+Q: What is the difference between bookkeeping and auditing?
+A: Bookkeeping involves keeping records and tracking financial transactions, while auditing is an independent assessment of the accounts to ensure they provide a true and fair view.
+
+Q: Does everyone have accounting obligations?
+A: Not everyone has accounting obligations. Small businesses below a certain turnover threshold may be exempt, but most companies are required to maintain accounts.
+
+Q: What is the obligation to keep accounts?
+A: The obligation to keep accounts is a legal requirement to document all financial transactions in a business to ensure accurate and reliable financial reporting.
+
+Q: Can I deduct home office expenses on my taxes?
+A: Yes, you can deduct expenses for a home office on your taxes if the office is necessary for your business and meets certain criteria set by the tax authorities.
+
+Q: What is the difference between a balance sheet and an income statement?
+A: A balance sheet shows the values of assets, liabilities, and equity at a specific point in time, while an income statement shows revenues and expenses over a period and the result of the business's operations.
+
+Q: How do I calculate tax for my sole proprietorship?
+A: Calculating tax for a sole proprietorship depends on several factors, including the business's income, deductible expenses, and applicable tax rules.
+
+Q: Is an auditor mandatory?
+A: In Norway, an auditor is usually not mandatory for sole proprietorships. However, there may be situations where an auditor is required, such as if the business exceeds certain financial thresholds or is subject to special regulations.
+
+Q: When are you open?
+A: We're open Mon-Thu 11-15.
+
+Q: Do you offer assistance with tax returns?
+A: Yes, we do.
+
+Q: Can you help with payroll services?
+A: Yes, we can help with payroll services.
+
+Q: Where is your office located?
+A: Vollaveien 20 A, 0668 Oslo
+
+Q: Do you offer counseling for small businesses?
+A: Yes, we offer counseling for small businesses.
+
+Q: How can I book a consultation?
+A: Send us an email to mnregnsmap@gmail.com to book a consultation.
+
+Q: Do you have experience with international tax advisory?
+A: Yes, we have experience with international tax advisory.
+
+Q: Do you offer digital accounting services?
+A: Yes, we offer digital accounting services tailored to meet the needs of modern businesses.
+
+Q: What services do you offer?
+A: We offer various services. If you want to know more, you can email us.
+
+Q: Do you offer services for doctors and dentists?
+A: Yes!!!
+
+Q: What is your phone number?
+A: +47 400 56 898
+
+Q: What is your email?
+A: mn@mnregnskap.no
+
+Q: How can I contact you?
+A: You can contact us via email mn@mnregnskap.no or phone +47 400 56 898.
+
+Q: What's your name?
+A: My name is Mona.
+
+
+
+
+
+

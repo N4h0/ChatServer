@@ -40,6 +40,27 @@ encoded_questions_listEN = convert_to_arrays(loaded_list_as_listsEN2)
 
 
 # Henter alle spørsmål og svar
+questionsEN = []
+answersEN = []
+with open('/home/n4h0/mysite/Q&AEnglish.txt', 'r', encoding='utf-8') as file:
+    for line in file:
+        if line.startswith('Q:'):
+            questionsEN.append(line[3:].strip())
+        if line.startswith('A') and not line.startswith('AF'):
+            answersEN.append(line[3:].strip())
+
+#Henter den encoda lista med spørsmål i json format
+with open('/home/n4h0/mysite/Q&A_embeddedEnglish.json', 'r', encoding='utf-8') as file:
+    loaded_list_as_listsEN2 = json.load(file)
+
+#Konverterer den encoda lista til ei liste med arrays.
+def convert_to_arrays(loaded_list_as_listsEN):
+    return [np.array(sublist) for sublist in loaded_list_as_listsEN]
+
+encoded_questions_listEN = convert_to_arrays(loaded_list_as_listsEN2)
+
+
+# Henter alle spørsmål og svar
 questions = []
 answers = []
 with open('/home/n4h0/mysite/Q&A.txt', 'r', encoding='utf-8') as file:
@@ -58,8 +79,11 @@ def convert_to_arrays(loaded_list_as_lists):
     return [np.array(sublist) for sublist in loaded_list_as_lists]
 
 encoded_questions_list = convert_to_arrays(loaded_list_as_lists2)
+encoded_questions_list = convert_to_arrays(loaded_list_as_lists2)
 
 #Henter modellen
+model_name = "DiffuseCalmly/BachelorSBERT"
+model = SetFitModel.from_pretrained(model_name)
 model_name = "DiffuseCalmly/BachelorSBERT"
 model = SetFitModel.from_pretrained(model_name)
 
@@ -69,6 +93,7 @@ def chatbot():
         return jsonify({'error': 'Missing question in request'}), 400
 
     user_question = request.json['question']
+    user_language = request.json.get('language', 'norsk')
     user_language = request.json.get('language', 'norsk')
 
     conn = get_db_connection()
@@ -98,6 +123,7 @@ def chatbot():
         similarity_scores.append(max(cosine_similarity([encoded_user_question], sublist)[0]))
 
     top_indices = np.argsort(similarity_scores)[-3:][::-1]  # Top 3 indices
+    top_indices = np.argsort(similarity_scores)[-3:][::-1]  # Top 3 indices
     CoSimScore = max(similarity_scores)
 
     if CoSimScore > 0.80:
@@ -117,10 +143,14 @@ def chatbot():
         })
     else:
         commonQuestions = [{'question': questions_list[i]} for i in [28,31,35]]
+        commonQuestions = [{'question': questions_list[i]} for i in [28,31,35]]
         return jsonify({
+            'message':mel2,
             'message':mel2,
             'suggestions': commonQuestions
         })
 
+
 if __name__ == '__main__':
     app.run(debug=True)
+

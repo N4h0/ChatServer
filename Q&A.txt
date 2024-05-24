@@ -63,14 +63,13 @@ A: Ja, du kan trekke fra utgifter til hjemmekontor på skatten hvis kontoret er 
 Q: Hva er forskjellen på en balanse og et resultatregnskap?
 A: En balanse viser verdier av eiendeler, gjeld og egenkapital på et bestemt tidspunkt, mens et resultatregnskap viser inntekter og utgifter over en periode, og resultatet av virksomhetens drift.
 
-
 Q: Hvordan beregner jeg skatt for mitt enkeltpersonforetak?
 A: Beregning av skatt for et enkeltpersonforetak avhenger av flere faktorer, inkludert virksomhetens inntekt, fradragsberettigede kostnader, og gjeldende skatteregler.
 
-Q: Er det obligatorisk med revisor?
-A:I Norge er det vanligvis ikke obligatorisk med revisor for enkeltpersonforetak. Imidlertid kan det være situasjoner der revisor er påkrevd, for eksempel hvis foretaket overstiger  visse økonomiske terskelverdier eller er underlagt spesielle regelverk.
+Q: Er revisor obligatorisk?
+A: I Norge er det vanligvis ikke obligatorisk med revisor for enkeltpersonforetak. Imidlertid kan det være situasjoner der revisor er påkrevd, for eksempel hvis foretaket overstiger  visse økonomiske terskelverdier eller er underlagt spesielle regelverk.
 
-Q: Hva er åpningstidene deres?
+Q: Når har dere åpent?
 A: Vi har åpent Man-Tor 11-15.
 
 Q: Tilbyr dere bistand med selvangivelsen?
@@ -83,10 +82,10 @@ Q: Hvor er kontoret deres lokalisert?
 A: Vollaveien 20 A, 0668 Oslo
 
 Q: Tilbyr dere rådgivning for småbedrifter?
-A: Ja, vi tilbyr rådgivning for småbedrifter. 
+A: Ja, vi tilbyr rådgivning for småbedrifter.
 
 Q: Hvordan kan jeg bestille en konsultasjon?
-A: Send oss en e-post til mnregnsmap@gmail.com for å bestille en konsultasjon. 
+A: Send oss en e-post til mnregnsmap@gmail.com for å bestille en konsultasjon.
 
 Q: Er dere erfarne med internasjonal skatterådgivning?
 A: Ja, vi har erfaring med internasjonal skatterådgivning
@@ -94,5 +93,20 @@ A: Ja, vi har erfaring med internasjonal skatterådgivning
 Q: Tilbyr dere digitale regnskapstjenester?
 A: Ja, vi tilbyr digitale regnskapstjenester som er skreddersydd for å møte behovene til moderne virksomheter
 
-Q: Hvilke tjenester tilbyr deres firma?
+Q: Hvilke tjenester tilbyr dere?
 A: Vi tilbyr ulike tjenester, hvis du vil vite mer kan du sende oss e-post.
+
+Q: Tilbyr dere tjenester for leger og tannleger?
+A: Ja!!!
+
+Q: Hva er telefonnummeret deres?
+A: +47 400 56 898
+
+Q: Hva er e-posten deres?
+A: mn@mnregnskap.no
+
+Q: Hvordan kan jeg kontakte dere?
+A: Vi kan kontaktes på e-post mn@mnregnskap.no eller telefon +47 400 56 898. 
+
+Q: Hva heter du?
+A: Jeg heter Mona.

@@ -1,13 +1,12 @@
 from flask import Flask, request, jsonify
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-from flask_cors import CORS
 import json
 import torch
 import sqlite3
 from setfit import SetFitModel
 
+from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
@@ -20,6 +19,27 @@ def get_db_connection():
     return conn
 
 # Henter alle spørsmål og svar
+questionsEN = []
+answersEN = []
+with open('/home/n4h0/mysite/Q&AEnglish.txt', 'r', encoding='utf-8') as file:
+    for line in file:
+        if line.startswith('Q:'):
+            questionsEN.append(line[3:].strip())
+        if line.startswith('A') and not line.startswith('AF'):
+            answersEN.append(line[3:].strip())
+
+#Henter den encoda lista med spørsmål i json format
+with open('/home/n4h0/mysite/Q&A_embeddedEnglish.json', 'r', encoding='utf-8') as file:
+    loaded_list_as_listsEN2 = json.load(file)
+
+#Konverterer den encoda lista til ei liste med arrays.
+def convert_to_arrays(loaded_list_as_listsEN):
+    return [np.array(sublist) for sublist in loaded_list_as_listsEN]
+
+encoded_questions_listEN = convert_to_arrays(loaded_list_as_listsEN2)
+
+
+# Henter alle spørsmål og svar
 questions = []
 answers = []
 with open('/home/n4h0/mysite/Q&A.txt', 'r', encoding='utf-8') as file:
@@ -30,9 +50,6 @@ with open('/home/n4h0/mysite/Q&A.txt', 'r', encoding='utf-8') as file:
             answers.append(line[3:].strip())
 
 #Henter den encoda lista med spørsmål i json format
-with open('/home/n4h0/mysite/Q&A_embedded.json', 'r', encoding='utf-8') as file:
-    loaded_list_as_lists = json.load(file)
-
 with open('/home/n4h0/mysite/Q&A_embeddedetFitModel.json', 'r', encoding='utf-8') as file:
     loaded_list_as_lists2 = json.load(file)
 
@@ -40,24 +57,19 @@ with open('/home/n4h0/mysite/Q&A_embeddedetFitModel.json', 'r', encoding='utf-8'
 def convert_to_arrays(loaded_list_as_lists):
     return [np.array(sublist) for sublist in loaded_list_as_lists]
 
-encoded_questions_list = convert_to_arrays(loaded_list_as_lists)
-encoded_questions_list2 = convert_to_arrays(loaded_list_as_lists2)
+encoded_questions_list = convert_to_arrays(loaded_list_as_lists2)
 
 #Henter modellen
-model_name = "NbAiLab/nb-sbert-base"
-model = SentenceTransformer(model_name)
+model_name = "DiffuseCalmly/BachelorSBERT"
+model = SetFitModel.from_pretrained(model_name)
 
-second_model_name = "DiffuseCalmly/BachelorSBERT"
-model2 = SetFitModel.from_pretrained(second_model_name)
-
-#Sjølve apien
 @app.route('/api/chatbot', methods=['POST'])
 def chatbot():
     if not request.json or 'question' not in request.json:
         return jsonify({'error': 'Missing question in request'}), 400
 
-    #Henter spørsmålet til bruker
     user_question = request.json['question']
+    user_language = request.json.get('language', 'norsk')
 
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -65,57 +77,50 @@ def chatbot():
     conn.commit()
     conn.close()
 
-    #Encoder spørsmålet til bruker
     encoded_user_question = model.encode([user_question])[0]
-    encoded_user_question2 = model2.encode([user_question])[0]
-
     similarity_scores = []
-    similarity_scores2 = []
-    #Gjer det på denne måten slik at einaste verdien som blir lagra er maksverdien av Q og alle AF til Q.
-    for sublist in encoded_questions_list:
+
+    if user_language == 'english':
+        questions_list = questionsEN
+        answers_list = answersEN
+        encoded_questions_listen = encoded_questions_listEN
+        mel1 = "Did you mean to ask any of these questions?"
+        mel2 = 'Sorry, I did not understand the question. Try asking in another way, or ask one of these questions:'
+    else:
+        questions_list = questions
+        answers_list = answers
+        encoded_questions_listen = encoded_questions_list
+        mel1 = "Mente du å spørre om et av disse alternativene."
+        mel2 = 'Beklager, jeg forsto ikke spørsmålet. Prøv å stille spørsmålet på en annen måte, eller still meg ett av disse spørsmålene:'
+
+
+    for sublist in encoded_questions_listen:
         similarity_scores.append(max(cosine_similarity([encoded_user_question], sublist)[0]))
-    for sublist in encoded_questions_list2:
-        similarity_scores2.append(max(cosine_similarity([encoded_user_question2], sublist)[0]))
-    top_indices = np.argsort(similarity_scores)[-3:][::-1] #Returnerer omdexem tol dei tre høgste verdiane
-    top_indices2 = np.argsort(similarity_scores2)[-3:][::-1] #Returnerer omdexem tol dei tre høgste verdiane
 
-    top_scores2 = sorted(similarity_scores2, reverse=True)[:3]
-    top_scores = sorted(similarity_scores, reverse=True)[:3]
-
+    top_indices = np.argsort(similarity_scores)[-3:][::-1]  # Top 3 indices
     CoSimScore = max(similarity_scores)
-    CoSimScore2 = max(similarity_scores2)
 
-    commonQuestions = [{'question': questions[i]} for i in [28,31,35]]
-
-    if CoSimScore2 > 0.80:
-        print("Returning output to user: ", answers[top_indices2[0]])
-        return jsonify(f"{answers[top_indices2[0]]} {CoSimScore2:.2f} \nUtrent:\n {answers[top_indices[0]]} {CoSimScore:.2f}")
-    elif CoSimScore2 > 0.70:
-        question_suggestions_with_scores = [
-            {
-                'question': f"{questions[i]} {top_scores2[k]:.2f} utrent {questions[j]} {top_scores[k]:.2f}"
-            }
-            for k, (i, j) in enumerate(zip(top_indices2, top_indices))
-        ]
+    if CoSimScore > 0.80:
+        response = answers_list[top_indices[0]]
+        return jsonify(response)
+    elif CoSimScore > 0.70:
+        question_suggestions = [{'question': questions_list[i], 'score': similarity_scores[i]} for i in np.argsort(similarity_scores)[-4:-1][::-1]]
         return jsonify({
-            'message': f'{answers[top_indices[0]]} {CoSimScore2:.2f}\nUtrent:\n {answers[top_indices[0]]} {CoSimScore:.2f}\n Mente du heller å spørre om noen av disse alternativene?\n',
-            'suggestions': question_suggestions_with_scores
+            'message': answers_list[top_indices[0]] + '\n' + mel1,
+            'suggestions': question_suggestions
         })
-    elif CoSimScore2 > 0.50:
-        question_suggestions_with_scores = [
-            {
-                'question': f"{questions[i]} {top_scores2[k]:.2f} utrent {questions[j]} {top_scores[k]:.2f}"
-            }
-            for k, (i, j) in enumerate(zip(top_indices2, top_indices))
-        ]
+    elif CoSimScore > 0.50:
+        question_suggestions = [{'question': questions_list[i], 'score': similarity_scores[i]} for i in np.argsort(similarity_scores)[-3:][::-1]]
         return jsonify({
-            'message': 'Jeg forsto ikke spørsmålet, prøv å omformulere det eller velg ett av disse alternativene.\n',
-            'suggestions': question_suggestions_with_scores
+            'message': mel2,
+            'suggestions': question_suggestions
         })
     else:
+        commonQuestions = [{'question': questions_list[i]} for i in [28,31,35]]
         return jsonify({
-            'message': 'Beklager, jeg forsto ikke spørsmålet. Prøv å stille spørsmålet på en annen måte, eller still meg ett av disse spørsmålene',
+            'message':mel2,
             'suggestions': commonQuestions
         })
+
 if __name__ == '__main__':
     app.run(debug=True)

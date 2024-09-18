@@ -4,7 +4,7 @@
 
 Dette repositoriet blir brukt til å kjøre en server i PythonAnywhere. Serveren sammenligner et input-spørsmål med spørsmålene i Q&A.txt eller Q&AEnglish.txt or returnerer det likeste spørsmålet. Chatbotten bruker en fine-tuna versjon av modellen  https://huggingface.co/NbAiLab/nb-sbert-base (https://huggingface.co/DiffuseCalmly/BachelorSBERT). 
 
-##Bruk
+## Bruk
 
 Chatbotten er laget for å kjøre på PythonAnywhere, ved å laste opp alle filer og starte en server. 
 

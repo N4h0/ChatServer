@@ -27,3 +27,5 @@ pytorch
 setfit
 flask_cors
 sqlite3
+
+![image](https://github.com/user-attachments/assets/010157da-9e49-4995-bfb4-fcb107887b61)
